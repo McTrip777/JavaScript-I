@@ -18,43 +18,50 @@ const example = {
 } 
 
 // Write your intern objects here:
-function Intern(id, name, email, gender, funct){
+function Intern(id, name, email, gender){
   this.id = id;
   this.name = name;
   this.email = email;
   this.gender = gender;
-  this.funct = funct;
 }
 
-let intern1 = new Intern(1,"Mitzi", "mmelloy0@psu.edu" ,"F")
-let intern2 = new Intern(2,"Kennan", "kdiben1@tinypic.com" ,"M", function() {return "Hello, my name is Kennan!"})
-let intern3 = new Intern(3,"Keven", "kmummery2@wikimedia.org" ,"M")
-let intern4 = new Intern(4,"Gannie", "gmartinson3@illinois.edu" ,"M")
-let intern5 = new Intern(5,"Antonietta", "adaine5@samsung.com" ,"F", function(x,y){return x*y})
+let mitzi = new Intern(1,"Mitzi", "mmelloy0@psu.edu" ,"F")
+let kennan = new Intern(2,"Kennan", "kdiben1@tinypic.com" ,"M")
+let keven = new Intern(3,"Keven", "kmummery2@wikimedia.org" ,"M")
+let gannie = new Intern(4,"Gannie", "gmartinson3@illinois.edu" ,"M")
+let antonietta = new Intern(5,"Antonietta", "adaine5@samsung.com" ,"F")
 
 // ==== Challenge 2: Reading Object Data ==== 
 // Once your objects are created, log out the following requests from HR into the console:
 
 // Mitzi's name
-console.log(intern1.name);
-
+console.log(mitzi.name);
 // Kennan's ID
-console.log(intern2.id);
+console.log(kennan.id);
 // Keven's email
-console.log(intern3.email);
+console.log(keven.email);
 // Gannie's name
-console.log(intern4.name);
+console.log(gannie.name);
 // Antonietta's Gender
-console.log(intern5.gender);
+console.log(antonietta.gender);
 
 // ==== Challenge 3: Object Methods ==== 
 // Give Kennan the ability to say "Hello, my name is Kennan!" Use the console.log provided as a hint.
 //console.log(kennan.speak())
-console.log(intern2.funct());
+function speak(){
+  return "Hello, my name is Kennan!"
+}
+
+kennan.speak=speak;
+console.log(kennan.speak());
 
 // Antonietta loves math, give her the ability to multiply two numbers together and return the product. Use the console.log provided as a hint.
 //console.log(antonietta.multiplyNums(3,4));
-console.log(intern5.funct(3,4));
+function multiplyNums(x,y){
+  return x*y;
+}
+antonietta.multiplyNums = multiplyNums;
+console.log(antonietta.multiplyNums(3,4));
 
 // === Great work! === Head over to the the arrays.js file or take a look at the stretch challenge
 
